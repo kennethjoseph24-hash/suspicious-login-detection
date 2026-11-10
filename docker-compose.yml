@@ -1,0 +1,28 @@
+# Optional convenience file: runs only PostgreSQL in a container.
+# The backend and frontend are meant to be run directly with Python/Node
+# during development and grading (see README.md) so it's obvious to a
+# professor what is actually happening under the hood.
+#
+# Usage:
+#   docker compose up -d
+#   (then set DATABASE_URL in .env to the value shown below and run the backend as usual)
+
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sld_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: slduser
+      POSTGRES_PASSWORD: sldpassword
+      POSTGRES_DB: suspicious_login_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - sld_pgdata:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+
+volumes:
+  sld_pgdata:

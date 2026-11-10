@@ -1,0 +1,61 @@
+{
+  "data_source": "Simulated. Contains no real student, login or attack records.",
+  "seed": 42,
+  "students": 50000,
+  "semester_days": 120,
+  "events": 5507347,
+  "normal_events": 5488134,
+  "attack_events": 19213,
+  "attack_campaigns": 4920,
+  "attacked_student_fraction_assumed": 0.1,
+  "campaigns_by_scenario": {
+    "credential_stuffing": 1054,
+    "domestic_phishing": 966,
+    "insider_peer": 695,
+    "foreign_takeover": 733,
+    "impossible_travel": 250,
+    "lab_shoulder_surf": 393,
+    "stolen_device": 344,
+    "brute_force": 485
+  },
+  "events_by_scenario": {
+    "normal": 5488134,
+    "credential_stuffing": 1893,
+    "domestic_phishing": 1247,
+    "insider_peer": 1586,
+    "foreign_takeover": 733,
+    "impossible_travel": 250,
+    "lab_shoulder_surf": 1002,
+    "stolen_device": 859,
+    "brute_force": 11643
+  },
+  "events_by_context": {
+    "Campus Network": 3300286,
+    "Laboratory Device": 767651,
+    "External Connection": 1439410
+  },
+  "students_by_residence": {
+    "hostel": 37155,
+    "day_scholar": 12845
+  },
+  "students_by_archetype": {
+    "regular": 19917,
+    "low_activity": 5065,
+    "lab_heavy": 8994,
+    "mobile_first": 10029,
+    "night_owl": 5995
+  },
+  "students_by_department": {
+    "IT": 5986,
+    "AIML": 5028,
+    "CHEM": 1973,
+    "EEE": 3977,
+    "CSE": 12038,
+    "MECH": 4998,
+    "CIVIL": 3487,
+    "ECE": 7923,
+    "BIOTECH": 1444,
+    "MBA": 3146
+  },
+  "generation_seconds": 85.3
+}

@@ -1,0 +1,104 @@
+{
+  "rows": 1098676,
+  "attack_rows": 3992,
+  "precision": 0.22245292475119927,
+  "recall": 0.7783066132264529,
+  "f1": 0.3460103569241049,
+  "roc_auc": 0.9100323081724762,
+  "pr_auc": 0.7397312966126189,
+  "false_positive_rate": 0.00992067117085844,
+  "by_context": {
+    "Campus Network": {
+      "rows": 657359,
+      "attack_rows": 377,
+      "precision": 0.002407100947795998,
+      "recall": 0.042440318302387266,
+      "f1": 0.004555808656036446,
+      "roc_auc": 0.5972566080178853,
+      "pr_auc": 0.0011103900294153156,
+      "false_positive_rate": 0.01009312279484065
+    },
+    "External Connection": {
+      "rows": 287804,
+      "attack_rows": 3388,
+      "precision": 0.514,
+      "recall": 0.910271546635183,
+      "f1": 0.6570089475926715,
+      "roc_auc": 0.9671787175304751,
+      "pr_auc": 0.8885168501349895,
+      "false_positive_rate": 0.010252587758775878
+    },
+    "Laboratory Device": {
+      "rows": 153513,
+      "attack_rows": 227,
+      "precision": 0.005303030303030303,
+      "recall": 0.030837004405286344,
+      "f1": 0.00904977375565611,
+      "roc_auc": 0.5950162636874516,
+      "pr_auc": 0.002342981082514429,
+      "false_positive_rate": 0.008565687668802108
+    }
+  },
+  "split": {
+    "unit": "student",
+    "train_events": 3308673,
+    "calibration_events": 1099998,
+    "test_events": 1098676,
+    "normal_events_used_for_fitting": 3297824
+  },
+  "target_calibration_fpr": 0.01,
+  "chosen_hyperparameters": {
+    "n_estimators": 100,
+    "max_samples": 4096,
+    "calibration_pr_auc": 0.7977162528514866
+  },
+  "hyperparameter_grid": [
+    {
+      "n_estimators": 100,
+      "max_samples": 256,
+      "calibration_pr_auc": 0.7881510355322758
+    },
+    {
+      "n_estimators": 100,
+      "max_samples": 1024,
+      "calibration_pr_auc": 0.7920748551999772
+    },
+    {
+      "n_estimators": 100,
+      "max_samples": 4096,
+      "calibration_pr_auc": 0.7977162528514866
+    },
+    {
+      "n_estimators": 150,
+      "max_samples": 256,
+      "calibration_pr_auc": 0.7862550730448709
+    },
+    {
+      "n_estimators": 150,
+      "max_samples": 1024,
+      "calibration_pr_auc": 0.7925609653792084
+    },
+    {
+      "n_estimators": 150,
+      "max_samples": 4096,
+      "calibration_pr_auc": 0.7967555073154251
+    },
+    {
+      "n_estimators": 300,
+      "max_samples": 256,
+      "calibration_pr_auc": 0.7871392820127767
+    },
+    {
+      "n_estimators": 300,
+      "max_samples": 1024,
+      "calibration_pr_auc": 0.7941587377675537
+    },
+    {
+      "n_estimators": 300,
+      "max_samples": 4096,
+      "calibration_pr_auc": 0.7970529952653379
+    }
+  ],
+  "training_seconds": 7.897,
+  "source": "Simulated student logins; real-world accuracy is not established"
+}

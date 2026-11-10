@@ -1,0 +1,613 @@
+{
+  "source": "Simulated student logins; real-world accuracy is not established",
+  "test_students": 10000,
+  "test_events": 1098676,
+  "test_attack_events": 3992,
+  "policies": {
+    "Password only": {
+      "attacker_entry_attempts": 800,
+      "attacker_access_rate": 1.0,
+      "attacker_access_ci95": [
+        0.9952209490028883,
+        1.0
+      ],
+      "attacker_stopped_by_otp": 0.0,
+      "attacker_blocked": 0.0,
+      "normal_logins_scored": 1006486,
+      "normal_allow_rate": 1.0,
+      "normal_otp_rate": 0.0,
+      "normal_block_rate": 0.0,
+      "students_blocked_at_least_once": 0.0,
+      "otp_prompts_per_student_semester": 0.0
+    },
+    "Isolation Forest only": {
+      "attacker_entry_attempts": 800,
+      "attacker_access_rate": 0.51875,
+      "attacker_access_ci95": [
+        0.4841192485797918,
+        0.5532015370078165
+      ],
+      "attacker_stopped_by_otp": 0.48125,
+      "attacker_blocked": 0.0,
+      "normal_logins_scored": 1006486,
+      "normal_allow_rate": 0.9943357384007329,
+      "normal_otp_rate": 0.0056642615992671536,
+      "normal_block_rate": 0.0,
+      "students_blocked_at_least_once": 0.0,
+      "otp_prompts_per_student_semester": 0.5701
+    },
+    "Rules only": {
+      "attacker_entry_attempts": 800,
+      "attacker_access_rate": 0.395,
+      "attacker_access_ci95": [
+        0.36170349395288454,
+        0.42930010675650904
+      ],
+      "attacker_stopped_by_otp": 0.29625,
+      "attacker_blocked": 0.30875,
+      "normal_logins_scored": 1006486,
+      "normal_allow_rate": 0.9757373674348178,
+      "normal_otp_rate": 0.021343565633302402,
+      "normal_block_rate": 0.0029190669318798273,
+      "students_blocked_at_least_once": 0.2155,
+      "otp_prompts_per_student_semester": 2.1482
+    },
+    "Rules + Isolation Forest": {
+      "attacker_entry_attempts": 800,
+      "attacker_access_rate": 0.3875,
+      "attacker_access_ci95": [
+        0.35435430989045524,
+        0.42172097658389496
+      ],
+      "attacker_stopped_by_otp": 0.24875,
+      "attacker_blocked": 0.36375,
+      "normal_logins_scored": 1006486,
+      "normal_allow_rate": 0.9744835000188775,
+      "normal_otp_rate": 0.021630703258664303,
+      "normal_block_rate": 0.0038857967224581367,
+      "students_blocked_at_least_once": 0.2832,
+      "otp_prompts_per_student_semester": 2.1771
+    }
+  },
+  "scenarios": {
+    "Password only": {
+      "foreign_takeover": {
+        "entry_attempts": 161,
+        "allowed": 161,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.9766952031526023,
+          1.0
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      },
+      "credential_stuffing": {
+        "entry_attempts": 97,
+        "allowed": 97,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.9619046107955446,
+          0.9999999999999999
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      },
+      "brute_force": {
+        "entry_attempts": 4,
+        "allowed": 4,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.5100999795960008,
+          1.0
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      },
+      "impossible_travel": {
+        "entry_attempts": 46,
+        "allowed": 46,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.9229238226702192,
+          1.0
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      },
+      "domestic_phishing": {
+        "entry_attempts": 193,
+        "allowed": 193,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.9804838001723212,
+          0.9999999999999999
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      },
+      "insider_peer": {
+        "entry_attempts": 134,
+        "allowed": 134,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.9721303293055217,
+          1.0
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      },
+      "stolen_device": {
+        "entry_attempts": 78,
+        "allowed": 78,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.9530605462258804,
+          1.0
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      },
+      "lab_shoulder_surf": {
+        "entry_attempts": 87,
+        "allowed": 87,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.957711004649852,
+          1.0
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      }
+    },
+    "Isolation Forest only": {
+      "foreign_takeover": {
+        "entry_attempts": 161,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.023304796847397745
+        ],
+        "otp_rate": 1.0,
+        "block_rate": 0.0
+      },
+      "credential_stuffing": {
+        "entry_attempts": 97,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.03809538920445529
+        ],
+        "otp_rate": 1.0,
+        "block_rate": 0.0
+      },
+      "brute_force": {
+        "entry_attempts": 4,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.48990002040399916
+        ],
+        "otp_rate": 1.0,
+        "block_rate": 0.0
+      },
+      "impossible_travel": {
+        "entry_attempts": 46,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.07707617732978073
+        ],
+        "otp_rate": 1.0,
+        "block_rate": 0.0
+      },
+      "domestic_phishing": {
+        "entry_attempts": 193,
+        "allowed": 129,
+        "access_rate": 0.6683937823834197,
+        "access_ci95": [
+          0.5992557244432916,
+          0.7309590269100809
+        ],
+        "otp_rate": 0.3316062176165803,
+        "block_rate": 0.0
+      },
+      "insider_peer": {
+        "entry_attempts": 134,
+        "allowed": 123,
+        "access_rate": 0.917910447761194,
+        "access_ci95": [
+          0.8589806884452829,
+          0.9535461539593324
+        ],
+        "otp_rate": 0.08208955223880597,
+        "block_rate": 0.0
+      },
+      "stolen_device": {
+        "entry_attempts": 78,
+        "allowed": 77,
+        "access_rate": 0.9871794871794872,
+        "access_ci95": [
+          0.9308897697115066,
+          0.9977333266111463
+        ],
+        "otp_rate": 0.01282051282051282,
+        "block_rate": 0.0
+      },
+      "lab_shoulder_surf": {
+        "entry_attempts": 87,
+        "allowed": 86,
+        "access_rate": 0.9885057471264368,
+        "access_ci95": [
+          0.937726515139851,
+          0.9979681445755221
+        ],
+        "otp_rate": 0.011494252873563218,
+        "block_rate": 0.0
+      }
+    },
+    "Rules only": {
+      "foreign_takeover": {
+        "entry_attempts": 161,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.023304796847397745
+        ],
+        "otp_rate": 0.5714285714285714,
+        "block_rate": 0.42857142857142855
+      },
+      "credential_stuffing": {
+        "entry_attempts": 97,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.03809538920445529
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 1.0
+      },
+      "brute_force": {
+        "entry_attempts": 4,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.48990002040399916
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 1.0
+      },
+      "impossible_travel": {
+        "entry_attempts": 46,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.07707617732978073
+        ],
+        "otp_rate": 1.0,
+        "block_rate": 0.0
+      },
+      "domestic_phishing": {
+        "entry_attempts": 193,
+        "allowed": 36,
+        "access_rate": 0.18652849740932642,
+        "access_ci95": [
+          0.13788561098866814,
+          0.24740692879966925
+        ],
+        "otp_rate": 0.41968911917098445,
+        "block_rate": 0.39378238341968913
+      },
+      "insider_peer": {
+        "entry_attempts": 134,
+        "allowed": 116,
+        "access_rate": 0.8656716417910447,
+        "access_ci95": [
+          0.7976474297584679,
+          0.9133135573455702
+        ],
+        "otp_rate": 0.13432835820895522,
+        "block_rate": 0.0
+      },
+      "stolen_device": {
+        "entry_attempts": 78,
+        "allowed": 77,
+        "access_rate": 0.9871794871794872,
+        "access_ci95": [
+          0.9308897697115066,
+          0.9977333266111463
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.01282051282051282
+      },
+      "lab_shoulder_surf": {
+        "entry_attempts": 87,
+        "allowed": 87,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.957711004649852,
+          1.0
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      }
+    },
+    "Rules + Isolation Forest": {
+      "foreign_takeover": {
+        "entry_attempts": 161,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.023304796847397745
+        ],
+        "otp_rate": 0.37267080745341613,
+        "block_rate": 0.6273291925465838
+      },
+      "credential_stuffing": {
+        "entry_attempts": 97,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.03809538920445529
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 1.0
+      },
+      "brute_force": {
+        "entry_attempts": 4,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.48990002040399916
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 1.0
+      },
+      "impossible_travel": {
+        "entry_attempts": 46,
+        "allowed": 0,
+        "access_rate": 0.0,
+        "access_ci95": [
+          0.0,
+          0.07707617732978073
+        ],
+        "otp_rate": 1.0,
+        "block_rate": 0.0
+      },
+      "domestic_phishing": {
+        "entry_attempts": 193,
+        "allowed": 36,
+        "access_rate": 0.18652849740932642,
+        "access_ci95": [
+          0.13788561098866814,
+          0.24740692879966925
+        ],
+        "otp_rate": 0.38341968911917096,
+        "block_rate": 0.43005181347150256
+      },
+      "insider_peer": {
+        "entry_attempts": 134,
+        "allowed": 110,
+        "access_rate": 0.8208955223880597,
+        "access_ci95": [
+          0.7473183024269962,
+          0.8765862372765477
+        ],
+        "otp_rate": 0.1417910447761194,
+        "block_rate": 0.03731343283582089
+      },
+      "stolen_device": {
+        "entry_attempts": 78,
+        "allowed": 77,
+        "access_rate": 0.9871794871794872,
+        "access_ci95": [
+          0.9308897697115066,
+          0.9977333266111463
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.01282051282051282
+      },
+      "lab_shoulder_surf": {
+        "entry_attempts": 87,
+        "allowed": 87,
+        "access_rate": 1.0,
+        "access_ci95": [
+          0.957711004649852,
+          1.0
+        ],
+        "otp_rate": 0.0,
+        "block_rate": 0.0
+      }
+    }
+  },
+  "ranking_correct_password_decisions": {
+    "events": 1017299,
+    "attack_events": 800,
+    "baseline_pr_auc_random": 0.0007863961332902126,
+    "models": {
+      "Isolation Forest (unsupervised)": {
+        "roc_auc": 0.8395853764981569,
+        "pr_auc": 0.16590747040411744
+      },
+      "Rule score": {
+        "roc_auc": 0.8456702656618452,
+        "pr_auc": 0.1510402337393018
+      },
+      "Rules + Isolation Forest score": {
+        "roc_auc": 0.8474094035016267,
+        "pr_auc": 0.12635933698960822
+      },
+      "Logistic regression (supervised)": {
+        "roc_auc": 0.844531279666778,
+        "pr_auc": 0.27808595879963316
+      },
+      "Random forest (supervised)": {
+        "roc_auc": 0.8636722496775697,
+        "pr_auc": 0.4083255026752638
+      }
+    }
+  },
+  "ranking_all_events_isolation_forest": {
+    "roc_auc": 0.9103044896013732,
+    "pr_auc": 0.7360894886853352
+  },
+  "threshold_sweep": [
+    {
+      "target_fpr": 0.005,
+      "achieved_fpr_all_normal": 0.005030675519145251,
+      "attacker_access_rate": 0.39375,
+      "normal_otp_rate": 0.020927265754317498,
+      "normal_block_rate": 0.0034575741739080327,
+      "otp_prompts_per_student_semester": 2.1063
+    },
+    {
+      "target_fpr": 0.01,
+      "achieved_fpr_all_normal": 0.009922498182123792,
+      "attacker_access_rate": 0.3875,
+      "normal_otp_rate": 0.021630703258664303,
+      "normal_block_rate": 0.0038857967224581367,
+      "otp_prompts_per_student_semester": 2.1771
+    },
+    {
+      "target_fpr": 0.02,
+      "achieved_fpr_all_normal": 0.01851036463490834,
+      "attacker_access_rate": 0.35375,
+      "normal_otp_rate": 0.022959087359387016,
+      "normal_block_rate": 0.005261871501441649,
+      "otp_prompts_per_student_semester": 2.3108
+    },
+    {
+      "target_fpr": 0.05,
+      "achieved_fpr_all_normal": 0.04910914930701463,
+      "attacker_access_rate": 0.3425,
+      "normal_otp_rate": 0.0313725178492299,
+      "normal_block_rate": 0.005885824542020455,
+      "otp_prompts_per_student_semester": 3.1576
+    },
+    {
+      "target_fpr": 0.1,
+      "achieved_fpr_all_normal": 0.0973659978587428,
+      "attacker_access_rate": 0.32,
+      "normal_otp_rate": 0.03675858382530905,
+      "normal_block_rate": 0.015428927973166045,
+      "otp_prompts_per_student_semester": 3.6997
+    }
+  ],
+  "permutation_importance_pr_auc_drop": {
+    "location_novelty": 0.0014143523218952958,
+    "device_novelty": 0.024335002099515557,
+    "browser_novelty": -0.0018984166878101005,
+    "ip_novelty": 0.012321584714486133,
+    "hour_deviation": -0.033836213782515556,
+    "failed_attempts_norm": -0.030239214638086542,
+    "login_frequency_norm": -0.028606502800826328,
+    "geo_distance_norm": 0.2449113113223672
+  },
+  "friction_by_group": {
+    "archetype": {
+      "lab_heavy": {
+        "logins": 197707,
+        "allow": 0.9753068935343716,
+        "otp": 0.021673486522986035,
+        "block": 0.003019619942642395
+      },
+      "low_activity": {
+        "logins": 29175,
+        "allow": 0.9362810625535561,
+        "otp": 0.055458440445586975,
+        "block": 0.008260497000856898
+      },
+      "mobile_first": {
+        "logins": 252508,
+        "allow": 0.97814722701855,
+        "otp": 0.01864099355267952,
+        "block": 0.0032117794287705734
+      },
+      "night_owl": {
+        "logins": 130566,
+        "allow": 0.9721673329963391,
+        "otp": 0.020227317984773983,
+        "block": 0.007605349018887
+      },
+      "regular": {
+        "logins": 396530,
+        "allow": 0.9753133432527173,
+        "otp": 0.02148639447204499,
+        "block": 0.003200262275237687
+      }
+    },
+    "residence": {
+      "day_scholar": {
+        "logins": 261337,
+        "allow": 0.9753957533759092,
+        "otp": 0.020854299238148445,
+        "block": 0.003749947385942289
+      },
+      "hostel": {
+        "logins": 745149,
+        "allow": 0.9741635565504349,
+        "otp": 0.021903001949945582,
+        "block": 0.0039334414996195395
+      }
+    },
+    "network_context": {
+      "Campus Network": {
+        "logins": 604783,
+        "allow": 0.9773009492661004,
+        "otp": 0.019025005663188283,
+        "block": 0.003674045070711313
+      },
+      "External Connection": {
+        "logins": 261083,
+        "allow": 0.9570941041737685,
+        "otp": 0.03694227506195348,
+        "block": 0.0059636207642780265
+      },
+      "Laboratory Device": {
+        "logins": 140620,
+        "allow": 0.9946522543023752,
+        "otp": 0.0044090456549566205,
+        "block": 0.0009387000426681838
+      }
+    }
+  },
+  "alerts": {
+    "alerts_in_test_population": 42015,
+    "alerts_per_day_per_10000_students": 350.125,
+    "share_for_real_attacks": 0.06545281447102225
+  },
+  "legacy_comparison": {
+    "legacy_model_on_legacy_data": {
+      "roc_auc": 0.9997594518837346,
+      "pr_auc": 0.9973567575558082
+    },
+    "legacy_model_on_student_decisions": {
+      "roc_auc": 0.836915475937507,
+      "pr_auc": 0.11854745262963155
+    },
+    "deployed_model_on_student_decisions": {
+      "roc_auc": 0.8395853764981569,
+      "pr_auc": 0.16590747040411744
+    }
+  },
+  "latency_ms_ml_plus_rules": {
+    "p50": 1.1625500046648085,
+    "p95": 1.4208349894033745
+  },
+  "risk_thresholds": {
+    "low_max": 30,
+    "medium_max": 60
+  },
+  "peak_daily_events": 126478
+}

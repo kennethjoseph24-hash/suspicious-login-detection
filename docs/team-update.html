@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CampusGuard Team Update</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a working brief read top to bottom. Actions first, then the numbers to quote. */
+:root {
+  color-scheme: light;
+  --bg: #f4f7f7; --surface: #ffffff; --ink: #13272e; --muted: #526a72; --rule: #d8e2e3;
+  --accent: #0e7c7b; --warn-bg: #fdecef; --warn-ink: #a42a3e;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0f1c20; --surface: #172a30; --ink: #e7f0f1; --muted: #a3b8be; --rule: #2d454c;
+    --accent: #4cc2bf; --warn-bg: #3a1c23; --warn-ink: #ffa9b6;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f1c20; --surface: #172a30; --ink: #e7f0f1; --muted: #a3b8be; --rule: #2d454c;
+  --accent: #4cc2bf; --warn-bg: #3a1c23; --warn-ink: #ffa9b6;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--body); }
+main { max-width: 900px; margin: 0 auto; padding: 36px 20px 64px; display: grid; gap: 34px; }
+h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; text-wrap: balance; }
+h2 { font-size: 21px; margin: 0 0 12px; text-wrap: balance; }
+p { margin: 0 0 10px; max-width: 68ch; }
+.lede { font-size: 18px; color: var(--muted); }
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 20px; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: 13.5px; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.deployed td { font-weight: 600; }
+ol, ul { margin: 0; padding-left: 22px; display: grid; gap: 7px; }
+code { font: 500 13.5px var(--mono); overflow-wrap: anywhere; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; }
+.tile strong { display: block; font-size: 30px; line-height: 1.15; color: var(--accent); }
+.tile span { font-size: 14.5px; color: var(--muted); }
+.warn { background: var(--warn-bg); border-radius: 10px; padding: 18px 20px; }
+.warn h2 { color: var(--warn-ink); }
+.pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.chip { display: inline-block; font-size: 13px; font-weight: 600; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>CampusGuard: final update for the team</h1>
+    <p class="lede">The project is complete and tested. The report and slides are drafted from the final results, and we submit tomorrow. Please read the numbers below before editing anything, because several have changed.</p>
+  </header>
+
+  <section class="warn">
+    <h2>The one thing everyone must get right</h2>
+    <p>The student dataset is <strong>simulated</strong>. No usable public dataset of real student logins exists: the closest, HIED-AuthLog, is embargoed until 23 December 2026. Never call the data "real", and never present these results as real-world accuracy. Do not use the old 99.98% figure as a result.</p>
+  </section>
+
+  <section>
+    <h2>What needs doing before we submit</h2>
+    <div class="panel scroll">
+      <table>
+        <thead><tr><th>Task</th><th>Where</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Add project ID, names, roll numbers, supervisor, department and institute. These are highlighted in yellow.</td><td>Report title page, slide 1</td><td>Team</td></tr>
+          <tr><td>Check the report against the Special Projects handout. It was not available when drafting, so required formats, declarations or certificates may be missing.</td><td>Report</td><td>Team</td></tr>
+          <tr><td>Export the edited report to PDF and replace <code>Final_Report.pdf</code>.</td><td>Submission folder</td><td>Team</td></tr>
+          <tr><td>Upload the full dataset (107 MB) to a shared drive, then paste the link.</td><td><code>Dataset/README_DATASET.txt</code></td><td>Team</td></tr>
+          <tr><td>Rename the folder to the project ID, ZIP it, and mail it with the subject <em>Special Project Final Submission (Your Unique Project ID)</em>.</td><td><code>PROJECT_ID_HERE</code></td><td>Team</td></tr>
+          <tr><td><strong>Not yet done:</strong> extract the final ZIP to a short path such as <code>C:\CG\</code> and follow <code>ReadMe.txt</code> from start to finish. An automated clean-copy test was stopped when the laptop ran low on memory, so a fresh install is still unconfirmed.</td><td><code>ReadMe.txt</code></td><td>Team</td></tr>
+          <tr><td>Rehearse the live demo once on the presenting laptop.</td><td><code>ReadMe.txt</code>, slide 12</td><td>Presenters</td></tr>
+          <tr><td>Read the likely viva questions.</td><td><code>docs/viva.md</code></td><td>Everyone</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Numbers to use</h2>
+    <p>All come from 10,000 held-out simulated students (800 attacker logins with the correct password, about 1 million genuine logins).</p>
+    <div class="tiles">
+      <div class="tile"><strong>50,000</strong><span>simulated students, 5,507,347 login attempts</span></div>
+      <div class="tile"><strong>38.2%</strong><span>attackers let in, down from 100% with passwords alone</span></div>
+      <div class="tile"><strong>0 of 308</strong><span>logins by remote attackers got through</span></div>
+      <div class="tile"><strong>2.3</strong><span>OTP prompts per student per semester</span></div>
+    </div>
+  </section>
+
+  <section class="panel scroll">
+    <h2>Policies compared</h2>
+    <table>
+      <thead><tr><th>Policy</th><th class="num">Attackers let in</th><th class="num">OTP on genuine logins</th><th class="num">Students blocked per semester</th></tr></thead>
+      <tbody>
+        <tr><td>Password only</td><td class="num">100%</td><td class="num">0%</td><td class="num">0%</td></tr>
+        <tr><td>Isolation Forest only</td><td class="num">50.9%</td><td class="num">0.54%</td><td class="num">0%</td></tr>
+        <tr><td>Rules only</td><td class="num">39.5%</td><td class="num">2.16%</td><td class="num">8.8%</td></tr>
+        <tr class="deployed"><td>Rules + Isolation Forest (deployed)</td><td class="num">38.2%</td><td class="num">2.28%</td><td class="num">10.1%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel scroll">
+    <h2>Attackers let in, by attack type</h2>
+    <table>
+      <thead><tr><th>Attack</th><th class="num">Attempts</th><th class="num">Let in</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Foreign takeover</td><td class="num">161</td><td class="num">0%</td><td rowspan="4">Different place, IP or device</td></tr>
+        <tr><td>Credential stuffing</td><td class="num">97</td><td class="num">0%</td></tr>
+        <tr><td>Impossible travel</td><td class="num">46</td><td class="num">0%</td></tr>
+        <tr><td>Brute force</td><td class="num">4</td><td class="num">0%</td></tr>
+        <tr><td>Domestic phishing</td><td class="num">193</td><td class="num">18.7%</td><td>A new city and IP alone can stay LOW</td></tr>
+        <tr><td>Insider peer</td><td class="num">134</td><td class="num">79.1%</td><td rowspan="3">Looks like the student. Needs a different control, such as passkeys.</td></tr>
+        <tr><td>Stolen device</td><td class="num">78</td><td class="num">98.7%</td></tr>
+        <tr><td>Lab shoulder-surfing</td><td class="num">87</td><td class="num">100%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="pair">
+    <div class="panel">
+      <h2>What we can say</h2>
+      <ul>
+        <li>In simulation, it stopped all remote attackers while rarely interrupting students.</li>
+        <li>Rules and OTP do most of the work.</li>
+        <li>The Isolation Forest adds little: 39.5% to 38.2%, within the margin of error, and no change in an independent run.</li>
+        <li>Attackers who look like the student mostly get in, and we measured that.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>What we must not say</h2>
+      <ul>
+        <li>"Trained on real student data."</li>
+        <li>"99.98% accurate." That score came from easy data and fell to 0.835 on realistic decisions.</li>
+        <li>"The ML model detects attacks." It is one supplementary signal.</li>
+        <li>"This would stop 62% of attacks in production." That figure depends on the mix of attacks we chose.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel scroll">
+    <h2>What changed in the system</h2>
+    <table>
+      <thead><tr><th>Change</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td>New simulator: 50,000 students, real calendar, 8 attack types, replayed through production code</td><td>Replaces the old 50,000-row feature sample, whose near-perfect scores were misleading</td></tr>
+        <tr><td><strong>Policy change:</strong> HIGH risk now asks for an OTP. It blocks only with 3+ recent password failures.</td><td>Blocking on behaviour alone locked out 28.3% of genuine students per semester. Now 10.1%, with no loss of security.</td></tr>
+        <tr><td>Failures count for 15 minutes only</td><td>Eight wrong guesses by anyone used to lock a student out forever</td></tr>
+        <tr><td>Dashboard, alerts and reset are admin-only</td><td>Anyone could read logins and wipe data. Sign in as <code>admin</code> first in the demo.</td></tr>
+        <tr><td>Browser and OS compared by family, without version</td><td>Every browser update looked like a new browser</td></tr>
+        <tr><td>One alert per guessing run; verified OTPs close their alert</td><td>One typo used to raise a HIGH alert</td></tr>
+        <tr><td>Removed three citations from the old generator</td><td>Summers-Curl, AlZoubi and Azad could not be found. <strong>Do not cite them.</strong> Check any earlier drafts.</td></tr>
+        <tr><td>53 automated tests, up from 24</td><td>Includes a check that the simulator learns baselines as production does</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Where everything is</h2>
+    <p>In <code>Desktop\sp</code> on the project laptop:</p>
+    <ul>
+      <li><code>team_handoff\Final_Report.docx</code> <span class="chip">edit this</span> and <code>Final_Report.pdf</code>: 31 pages, 9 chapters</li>
+      <li><code>team_handoff\Final_Presentation.pptx</code> <span class="chip">edit this</span>: 15 slides with speaker notes and editable charts</li>
+      <li><code>PROJECT_ID_HERE\</code> and <code>PROJECT_ID_HERE.zip</code>: the submission folder, pending the fresh-install check above</li>
+      <li><code>suspicious-login-detection\ml\results\</code>: all results as JSON, plus report figures</li>
+      <li><code>suspicious-login-detection\docs\viva.md</code>: pitch, demo order and likely questions</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
